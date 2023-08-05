@@ -3,6 +3,7 @@ import { StyleSheet, View, Button } from 'react-native';
 import { Formik, useField } from 'formik'
 import StyledTextInput from '../components/StyledTextInput'
 import StyledText from '../components/StyledText';
+import { loginValidationSchema } from '../validationSchema/login';
 
 const initialValues = {
   email: '',
@@ -39,28 +40,10 @@ const FormikInputValue = ({ name, ...props }) => {
   );
 };
 
-const validate = (values) => {
-  const errors = {};
-
-  if (!values.email) {
-    errors.email = 'Required email';
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = 'Invalid email address';
-  };
-
-  if (!values.password) {
-    errors.password = 'Required password';
-  } else if (values.password.length < 6) {
-    errors.password = '6 characters minimum';
-  };
-
-  return errors;
-};
-
 const LogInPage = () => {
   return (
     <Formik
-      validate={validate}
+      validationSchema={loginValidationSchema}
       initialValues={initialValues}
       onSubmit={values => console.log(values)}
     >

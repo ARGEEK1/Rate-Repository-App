@@ -1,7 +1,6 @@
 import React from "react";
 import {
-  StyleSheet, TouchableWithoutFeedback, View,
-  ScrollView
+  StyleSheet, TouchableWithoutFeedback, View, ScrollView
 } from 'react-native';
 import StyledText from "./StyledText";
 import Constants from 'expo-constants';
@@ -30,7 +29,6 @@ const styles = StyleSheet.create({
 const AppBarTab = ({ children, to }) => {
   const { pathname } = useLocation();
   const active = pathname === to;
-
   const textStyles = [
     styles.text,
     active && styles.active

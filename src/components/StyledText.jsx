@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   }
 })
 
-const StyledText = ({children, color, fontSize, fontWeight, aling, style, ...restOfProps }) => {
+const StyledText = ({ children, color, fontSize, fontWeight, aling, style, ...restOfProps }) => {
   const textStyles = [
     styles.text,
     aling === 'center' && styles.textAlingCenter,
