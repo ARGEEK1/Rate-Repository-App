@@ -9,7 +9,7 @@ export const useRepositories = () => {
   // const [repositories, setRepositories] = useState(null);
   // const fetchRepositories = async () => {
   //   const response = await globalThis.fetch(
-  //     "http://192.168.1.136:5000/api/repositories"
+  //     "http://localhost:5000/api/repositories"
   //   );
   //   const data = await response.json();
   //   setRepositories(data);
